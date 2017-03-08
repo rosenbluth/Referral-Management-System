@@ -1,0 +1,110 @@
+<div id='container-for-all'><ng-include src="'partials/loggedOutNavbar.html'"></ng-include>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h2 class="center-align bold-mb">SandBox Commerce Partner Program</h2>
+        </div>
+    </div>
+
+                <h6 class="center-align bigger">Working together to make mobile commerce affordable and profitable for retailers.</h6>
+
+
+
+
+
+    <div class="center">
+        <img class='card photo-card' src="/images/people-office-group-team_1024.jpg" alt="">
+    </div>
+
+
+
+    <div class="row card less-top ">
+        <div class='col s6'>
+            <div class='home-card '>
+                <h6 class="bigger"> Mobile commerce is growing far faster than any other segment within the retail sector:</h6>
+        <ul class='circles'>
+            <li  >   <span class='make-orange'>&#9654;</span> 54% of mobile transactions take place within retail apps</li>
+                <p></p>
+            <li> 	<span class='make-orange'>&#9654;</span> Apps convert at 3x the rate of mobile web</li>
+                <p></p>
+            <li>	<span class='make-orange'>&#9654; </span> The average order value of an app is 40% higher than mobile web.</li>
+                <p></p>
+             <li> 	<span class='make-orange'>&#9654;</span> None of the major eCommerce platforms (Shopify, Etsy, or BigCommerce) have a workable app strategy for individual merchants.</li>
+         </ul>
+            </div>
+        </div>
+
+        <div class='col s6 move-up'>
+            <div class='home-card'>
+
+            <h6> Sandbox Commerce is the only way to seamlessly turn an existing eCommerce store into a smartphone app.</h6>
+                <strong><p >SandBox Commerce allows any retailer to build and deploy an app in less than a week. It then leverage its mobile commerce expertise to offer turn-key solutions and services to engage, market, manage, and grow the app.</p></strong>
+                <strong><p >Help SandBox Commerce bring this technology to retailers worldwide and get rewarded for your efforts. Not only do you get to re-engage your current customers with a new offering, but you get to start offering a mobile app offering for your new customers with no additional resources required. You also get paid each time you bring a client to SandBox Commerce. </p></strong>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- the form card -->
+<a id='ref_sub'></a>
+<div class='jump-to'></div>
+<div  class="myContainer bottom-margin">
+    <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+            <div class="card">
+                <div class="input-field">
+                    <div class="cardContent bottom-spacing-focus">
+
+                        <form name='formLandingPage' novalidate="" ng-submit="view.submitReferralClicked($event, formLandingPage.$valid)">
+
+                          <div class='topCenter please neg-top'>
+                            <h5><p class='center-me'>Submit your first referral today and get your journey started as a SandBox Commerce Partner.</p></h5>
+                          </div>
+
+
+                          <div ng-show="formLandingPage.$submitted || formLandingPage.leadName.$touched">
+                            <span ng-show="formLandingPage.leadName.$error.required" class="orangeText">Please Enter Your Referral's Name</span>
+                          </div>
+                            <input name="leadName" required="" ng-model="view.newReferral.leadName" placeholder="Referral's First and Last Name" type="text" id="textarea1" />
+
+
+                            <div ng-show="formLandingPage.$submitted || formLandingPage.leadCompanyName.$touched">
+                              <span ng-show="formLandingPage.leadCompanyName.$error.required" class="orangeText">Please Tell Us the Company Name</span>
+                            </div>
+                            <input name="leadCompanyName" required="" ng-model="view.newReferral.leadCompanyName" placeholder="Referral's Company Name" type="text" id="textarea1" />
+
+
+                            <div ng-show="formLandingPage.$submitted || formLandingPage.leadEmail.$touched">
+                              <span ng-show="formLandingPage.leadEmail.$error.required" class="orangeText">Please Enter a Valid Email</span>
+                            </div>
+                            <input name="leadEmail" required="" ng-model="view.newReferral.leadEmail" placeholder="Referral's E-mail" type="email" id="textarea1"/>
+
+
+                            <div ng-show="formLandingPage.$submitted || formLandingPage.leadPhone.$touched">
+                              <span ng-show="formLandingPage.leadPhone.$error.required" class="orangeText">Please Enter a Valid Phone Number</span>
+                            </div>
+                            <input name="leadPhone" required="" ng-model="view.newReferral.leadPhone" placeholder="Referral's Phone" type="text" id="textarea1" />
+
+                          <div class="bottomSpace">
+                            <div class="cardContentButtons" ng-if="formLandingPage.$valid">
+                                <button class="submitBtn btn waves-effect waves-light amber darken-4 top-hat" type="submit" name="action">Submit</button>
+                            </div>
+                            <div class="cardContentButtons" ng-if="!formLandingPage.$valid">
+                               <button class="submitBtn btn waves-effect waves-light amber darken-4 top-hat" type="submit" name="action" disabled="">Submit</button>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-include src="'partials/footer.html'"></ng-include>
+</div>

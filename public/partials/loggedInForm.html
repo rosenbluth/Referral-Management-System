@@ -1,0 +1,29 @@
+<div><ng-include src="'partials/navbar.html'"></ng-include>
+
+<div class="myContainer bottom-margin">
+    <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+            <div class="card">
+                <div class="input-field">
+                    <div class="cardContent bottom-spacing-focus neg-top">
+                        <form ng-submit="view.submitReferralClicked($event)" name='form'>
+                            <div class='topCenter please'>
+                                <h6><p class='center-me'>Add your referral's information below.</p></h6>
+                            </div>
+                            <input id='textarea1' ng-model="view.newReferral.leadName" placeholder="Referral's First and Last Name" type="text" />
+                            <input id='textarea1' ng-model="view.newReferral.leadCompanyName" placeholder="Referral's Company Name" type="text" />
+                            <input id='textarea1' ng-model="view.newReferral.leadEmail" placeholder="Referral's E-mail" type="text" />
+                            <input id='textarea1' ng-model="view.newReferral.leadPhone" placeholder="Referral's Phone" type="text" />
+                            <div class="cardContentButtons">
+                                <button class="submitBtn btn waves-effect waves-light top-hat amber darken-4" type="submit" name="action">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-include src="'partials/footer.html'"></ng-include>
+</div>

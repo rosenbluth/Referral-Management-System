@@ -1,0 +1,33 @@
+<div><ng-include src="'partials/loggedOutNavbar.html'"></ng-include>
+
+<div class="myContainer">
+    <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+            <div class="card">
+                <div class="input-field">
+                    <div class="cardContent">
+                        <div>
+                            <img src="/images/cancel.png" alt="">
+                        </div>
+                    </div>
+                    <br>
+                    <h5>There was a problem registering. [Error Message ex. You have already registered. You entered the wrong password.]</h5>
+                    </br>
+
+                    <div class="row">
+                        <div class="loginButtons">
+                            <div class="closeButtonLogin">
+                                <button class="submitBtn btn waves-effect waves-light wButton" type="" name="" ng-click="view.closeClicked($event)">Close </button>
+                            </div>
+
+                            <button class="submitBtn btn waves-effect waves-light sbButton" type="submit" name="action" ng-click="view.loginClicked($event)">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-include src="'partials/footer.html'"></ng-include>
+</div>

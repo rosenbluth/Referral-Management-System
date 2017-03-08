@@ -1,0 +1,45 @@
+<div><ng-include src="'partials/navbar.html'"></ng-include>
+<div class='please'>
+    <button ng-click='view.nonConvertedClick()' class="submitBtn btn waves-effect waves-light amber darken-4 move-rightup" type="" name="action">View Non-Converted</button>
+    <h4 class="center-align bolded">Converted Referrals</h4>
+</div>
+
+<div class="card bottom-margin">
+    <table class="striped responsive-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Conversion Date</th>
+                <th>Amount to Date</th>
+                <th>Next Payout Date</th>
+                <th>Next Payout</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="referral in currentUser.data">
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.leadName}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.leadCompanyName}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.leadEmail}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.conversionDate | date: 'longDate'}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.totalAmountPaidForReferral | currency}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{date}}, {{year}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.amountMadeTowardNextPayout | currency}}</td>
+                <td ng-if='referral.starterConverted || referral.growthConverted'>{{referral.activeReferral?'Active':'InActive'}}</td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+<script type='text/javascript' src='app.js'></script>
+
+
+<ng-include src="'partials/footer.html'"></ng-include>
+</div>

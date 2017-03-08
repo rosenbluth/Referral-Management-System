@@ -1,0 +1,59 @@
+<div><ng-include src="'partials/navbar.html'"></ng-include>
+<div class='please'>
+    <button ng-click='view.convertedViewClick()' class="submitBtn btn waves-effect waves-light amber darken-4 move-rightup" type="" name="action">View Converted</button>
+    <h4 class="center-align bolded">Non-Converted Referrals</h4>
+</div>
+
+<div class="card bottom-margin">
+    <table class="striped responsive-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Referring Party</th>
+                <th>Date Referred</th>
+                <!-- <th>Converted?</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="referral in currentUser.data">
+                <td ng-if='!referral.activeReferral' >{{referral.leadName}}</td>
+                <td ng-if='!referral.activeReferral'>{{referral.leadCompanyName}}</td>
+                <td ng-if='!referral.activeReferral'>{{referral.leadEmail}}</td>
+                <td ng-if='!referral.activeReferral'>{{referral.leadPhone}}</td>
+                <td ng-if='!referral.activeReferral'>{{referral.referrerEmail}}</td>
+                <td ng-if='!referral.activeReferral'>{{referral.timeStamp | date: 'longDate'}}</td>
+                <td ng-if='!referral.activeReferral'>
+                    <form class='make-flex' ng-submit=convertClicked(referral)>
+                        <p class="switch top-down">
+                            <label class='need-margin-b'>
+                                 Starter
+                                 <input  type="checkbox" ng-model=referral.starterConverted>
+                                 <span class="lever amber darken-4"></span>
+
+                             </label>
+                            <label class='need-margin-t'>
+                                 Growth
+                                 <input type="checkbox" ng-model=referral.growthConverted>
+                                 <span class="lever amber darken-4"></span>
+
+                             </label>
+                        </p>
+                        <input type="submit" value='Convert' class='waves-effect waves-light btn amber darken-4 slight-down'>
+                    </form>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<ng-include src="'partials/footer.html'"></ng-include>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+<script type='text/javascript' src='app.js'></script>
+</div>

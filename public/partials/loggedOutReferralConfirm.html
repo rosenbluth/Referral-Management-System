@@ -1,0 +1,37 @@
+<div><ng-include src="'partials/loggedOutNavbar.html'"></ng-include>
+
+<div class="myContainer bottom-margin">
+    <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+            <div class="card">
+                <div class="input-field">
+                    <div class="cardContent">
+                        <div>
+                            <img src="/images/checked.png" alt="">
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class='center-me'>Thank you for providing the referral information.  You will only be able to track your progress after you register and login.</h5>
+                    </br>
+
+                    <div class="row">
+                        <div class="loginButtons">
+                            <div class="closeButtonLogin">
+                                <button class="submitBtn btn waves-effect waves-light wButton" type="" name="" ng-click="view.closeClicked($event)">Close</button>
+                            </div>
+
+                            <div class="closeButtonLogin">
+                                <button ng-click="view.registerClicked($event)" class="submitBtn btn waves-effect waves-light sbButton" type="submit" name="action">Register</button>
+                            </div>
+
+                            <button class="submitBtn btn waves-effect waves-light sbButton" type="submit" name="action" ng-click="view.loginClicked($event)">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-include src="'partials/footer.html'"></ng-include>
+</div>

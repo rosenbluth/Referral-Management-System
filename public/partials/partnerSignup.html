@@ -1,0 +1,37 @@
+<div><ng-include src="'partials/loggedOutNavbar.html'"></ng-include>
+
+<div class="myContainer bottom-margin">
+    <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+            <div class="card">
+                <div class="input-field">
+                    <div class="cardContent sides-margin">
+                        <form ng-submit="view.submitPartner($event)" name='form'>
+                            <div class='topCenter please'>
+                                <h5><p class='center-me'>Please register to keep track of your referral bonus.</p></h5>
+                            </div>
+                            <div class="topCenter">
+                                <img class='sides-margin' src="images/referral.png" alt="">
+                            </div>
+                            <input id='textarea1' ng-model="view.partner.firstName" placeholder="First Name" type="text" />
+                            <input id='textarea1' ng-model="view.partner.lastName" placeholder="Last Name" type="text" />
+                            <input id='textarea1' ng-model="view.partner.email" placeholder="E-mail Address" type="text" />
+                            <input id='textarea1' ng-model="view.partner.phone" placeholder="Phone Number" type="text" />
+                            <input id='textarea1' ng-model="view.partner.stripe" placeholder="Stripe Account ID" type="text" onfocus="Materialize.toast('Please enter your Stripe Account ID', 4000)" />
+                            <input id='textarea1' ng-model="view.partner.venmo" placeholder="Venmo Account ID" type="text" onfocus="Materialize.toast( 'Please enter your Venmo email, phone, or username', 4000)" />
+                            <input id='textarea1' ng-model="view.partner.password" placeholder="Password" type="password" />
+                            <input id='textarea1' ng-model="view.partner.passConf" placeholder="Confirm Password" type="password" />
+                            <h6 ng-if='view.errorInPass'>{{view.errorInPass}}</h6>
+                            <div class="cardContentButtons">
+                                <button class="submitBtn btn waves-effect waves-light amber darken-4 top-hat" type="submit" name="action">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<ng-include src="'partials/footer.html'"></ng-include>
+</div>

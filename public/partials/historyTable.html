@@ -1,0 +1,41 @@
+<div><ng-include src="'partials/navbar.html'"></ng-include>
+    <button ng-if='currentUser.admin' ng-click='view.nonConvertedClick()' class="submitBtn btn waves-effect waves-light amber darken-4 move-rightup" type="" name="action">View Non-Converted</button>
+
+<div class='please' ng-class="{ 'top-mar' : !currentUser.admin }">
+    <h4 class="center-align bolded">Referral Program History</h4>
+</div>
+<div class="card bottom-margin">
+    <table class="striped responsive-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Conversion Date</th>
+                <th>Amount to Date</th>
+                <th>Next Payout Date</th>
+                <th>Next Payout</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="referral in currentUser.data">
+                <td>{{referral.leadName}}</td>
+                <td>{{referral.leadCompanyName}}</td>
+                <td>{{referral.leadEmail}}</td>
+                <td ng-if="referral.conversionDate">{{referral.conversionDate | date:'mediumDate'}}  </td>
+                <td ng-if="!referral.conversionDate">N/A</td>
+                <td ng-if="referral.activeReferral">{{referral.totalAmountPaidForReferral | currency}}</td>
+                <td ng-if="!referral.activeReferral">$0</td>
+                <td>{{date}}, {{year}}</td>
+                <td ng-if="referral.activeReferral">{{referral.amountMadeTowardNextPayout | currency}}</td>
+                <td ng-if="!referral.activeReferral">$0</td>
+                <td>{{referral.activeReferral?'Active':'Inactive'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-include src="'partials/footer.html'"></ng-include>
+<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+<script type='text/javascript' src='app.js'></script>
+</div>
